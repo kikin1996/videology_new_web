@@ -300,45 +300,95 @@
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════ CTA / CONTACT ════════════════════════════ -->
+  <!-- ═══════════════════════════════════ BOOKING / CONTACT ════════════════════════ -->
   <section class="cta-section" id="kontakt">
     <div class="container">
-      <div class="cta-inner fade-up">
-        <div class="section-label">Kontakt</div>
+      <div class="cta-header fade-up">
+        <div class="section-label">Objednávka</div>
         <h2 class="section-title">
-          Připraveni ukázat vaši<br>
-          <em>nemovitost světu?</em>
+          Vyberte si <em>termín natáčení</em>
         </h2>
         <p class="section-subtitle">
-          Kontaktujte nás a získejte nezávaznou nabídku do 24 hodin.
+          Zvolte volný den, počet kamer a nechte nám kontakt — termín potvrdíme do 24 hodin.
         </p>
+      </div>
 
-        <form class="contact-form" id="contactForm" novalidate>
-          <div class="form-row">
-            <div class="form-field">
-              <input type="text" name="name" placeholder="Vaše jméno" required>
+      <div class="booking-grid fade-up">
+        <!-- Camera count + calendar -->
+        <div class="booking-panel">
+          <div class="booking-block-label">Počet kamer</div>
+          <div class="camera-options" id="cameraOptions">
+            <button type="button" class="camera-option" data-cameras="1">
+              <span class="camera-option-icon">📷</span>
+              <span class="camera-option-text">
+                <span class="camera-option-title">1 kamera</span>
+                <span class="camera-option-desc">Standardní natáčení jedním štábem</span>
+              </span>
+            </button>
+            <button type="button" class="camera-option" data-cameras="2">
+              <span class="camera-option-icon">🎬</span>
+              <span class="camera-option-text">
+                <span class="camera-option-title">2 kamery</span>
+                <span class="camera-option-desc">Dva úhly současně, dynamičtější střih</span>
+              </span>
+            </button>
+          </div>
+
+          <div class="booking-block-label">Termín natáčení</div>
+          <div class="calendar" id="calendar">
+            <div class="calendar-header">
+              <button type="button" class="calendar-nav" id="calPrev" aria-label="Předchozí měsíc">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+              </button>
+              <span class="calendar-month" id="calMonthLabel">—</span>
+              <button type="button" class="calendar-nav" id="calNext" aria-label="Další měsíc">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+              </button>
             </div>
-            <div class="form-field">
-              <input type="email" name="email" placeholder="E-mailová adresa" required>
+            <div class="calendar-weekdays">
+              <span>Po</span><span>Út</span><span>St</span><span>Čt</span><span>Pá</span><span>So</span><span>Ne</span>
+            </div>
+            <div class="calendar-grid" id="calGrid"></div>
+            <div class="calendar-legend">
+              <span><i class="cal-dot cal-dot--free"></i> Volno</span>
+              <span><i class="cal-dot cal-dot--booked"></i> Obsazeno</span>
+              <span><i class="cal-dot cal-dot--selected"></i> Vybráno</span>
             </div>
           </div>
-          <div class="form-row">
-            <div class="form-field">
-              <input type="tel" name="phone" placeholder="Telefon (volitelné)">
+        </div>
+
+        <!-- Contact form -->
+        <div class="booking-panel">
+          <form class="contact-form" id="contactForm" novalidate>
+            <div class="booking-summary" id="bookingSummary">
+              Nejprve vyberte počet kamer a datum natáčení.
+            </div>
+            <div class="form-row">
+              <div class="form-field">
+                <input type="text" name="name" placeholder="Vaše jméno" required>
+              </div>
+              <div class="form-field">
+                <input type="email" name="email" placeholder="E-mailová adresa" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-field">
+                <input type="tel" name="phone" placeholder="Telefon (volitelné)">
+              </div>
+              <div class="form-field">
+                <input type="text" name="address" placeholder="Adresa nemovitosti">
+              </div>
             </div>
             <div class="form-field">
-              <input type="text" name="address" placeholder="Adresa nemovitosti">
+              <textarea name="message" placeholder="Poznámka k natáčení (nepovinné)" rows="3"></textarea>
             </div>
-          </div>
-          <div class="form-field">
-            <textarea name="message" placeholder="Řekněte nám více o vašem projektu — typ nemovitosti, termín, požadavky..." rows="5"></textarea>
-          </div>
-          <button type="submit" class="btn btn-dark btn-submit" id="submitBtn">
-            <span class="btn-label">Odeslat poptávku</span>
-            <span class="btn-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span>
-          </button>
-          <p class="form-note">Odpovíme vám do 24 hodin. Bez závazků, bez poplatků za konzultaci.</p>
-        </form>
+            <button type="submit" class="btn btn-dark btn-submit" id="submitBtn">
+              <span class="btn-label">Odeslat objednávku</span>
+              <span class="btn-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span>
+            </button>
+            <p class="form-note" id="formNote">Odpovíme vám do 24 hodin. Termín je závazný po našem potvrzení.</p>
+          </form>
+        </div>
       </div>
     </div>
   </section>
@@ -398,5 +448,6 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script type="module" src="js/booking.js"></script>
 </body>
 </html>

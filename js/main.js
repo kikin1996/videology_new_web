@@ -91,42 +91,8 @@ const statsSection = document.querySelector('.stats-section');
 if (statsSection) statsObserver.observe(statsSection);
 
 
-// ── Contact form ──────────────────────────────────────
-const contactForm = document.getElementById('contactForm');
-const submitBtn   = document.getElementById('submitBtn');
-
-if (contactForm) {
-  contactForm.addEventListener('submit', e => {
-    e.preventDefault();
-
-    // Basic validation
-    const name  = contactForm.name.value.trim();
-    const email = contactForm.email.value.trim();
-    if (!name || !email) {
-      shakeField(!name ? contactForm.name : contactForm.email);
-      return;
-    }
-
-    // Simulate send
-    submitBtn.disabled = true;
-    submitBtn.innerHTML = '<span class="btn-label">Odesláno! Brzy se ozveme.</span><span class="btn-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>';
-    submitBtn.style.background = '#16a34a';
-
-    setTimeout(() => {
-      submitBtn.innerHTML = '<span class="btn-label">Odeslat poptávku</span><span class="btn-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span>';
-      submitBtn.style.background = '';
-      submitBtn.disabled = false;
-      contactForm.reset();
-    }, 5000);
-  });
-}
-
-function shakeField(input) {
-  input.style.borderColor = '#ef4444';
-  input.style.animation = 'none';
-  input.focus();
-  setTimeout(() => { input.style.borderColor = ''; }, 1800);
-}
+// ── Contact / booking form ────────────────────────────
+// Handled by js/booking.js (calendar + camera selection + Firestore).
 
 
 // ── Ticker pause on hover (handled in CSS) ────────────
