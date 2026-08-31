@@ -109,11 +109,11 @@ if (contactForm) {
 
     // Simulate send
     submitBtn.disabled = true;
-    submitBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Odesláno! Brzy se ozveme.';
+    submitBtn.innerHTML = '<span class="btn-label">Odesláno! Brzy se ozveme.</span><span class="btn-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>';
     submitBtn.style.background = '#16a34a';
 
     setTimeout(() => {
-      submitBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg> Odeslat poptávku';
+      submitBtn.innerHTML = '<span class="btn-label">Odeslat poptávku</span><span class="btn-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span>';
       submitBtn.style.background = '';
       submitBtn.disabled = false;
       contactForm.reset();
