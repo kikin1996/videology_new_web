@@ -2,6 +2,50 @@
    VIDEOLOGY.CZ — Main JS
    ═══════════════════════════════════════════════════════ */
 
+// ── Hero background video (force autoplay) ────────────
+const heroVideo = document.querySelector('.hero-video');
+
+if (heroVideo) {
+  heroVideo.muted = true;
+  heroVideo.defaultMuted = true;
+  heroVideo.playsInline = true;
+
+  const tryPlay = () => heroVideo.play().catch(() => {});
+
+  tryPlay();
+  heroVideo.addEventListener('loadedmetadata', tryPlay);
+  heroVideo.addEventListener('canplay', tryPlay);
+  document.addEventListener('click', tryPlay, { once: true });
+}
+
+
+// ── Custom cursor (focus reticle) ──────────────────────
+const cursorRing = document.getElementById('cursorRing');
+
+if (cursorRing && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+  document.body.classList.add('has-custom-cursor');
+
+  window.addEventListener('mousemove', e => {
+    cursorRing.style.setProperty('--cx', e.clientX + 'px');
+    cursorRing.style.setProperty('--cy', e.clientY + 'px');
+    cursorRing.classList.add('active');
+  });
+
+  document.addEventListener('mouseleave', () => cursorRing.classList.remove('active'));
+
+  const focusTargets = 'a, button, .btn, .scroll-cue, .social-icon, .step-card, .service-card, input, textarea, .result-card, .quote-photo, .hero';
+
+  document.addEventListener('mouseover', e => {
+    if (e.target.closest(focusTargets)) cursorRing.classList.add('photo');
+  });
+  document.addEventListener('mouseout', e => {
+    if (e.target.closest(focusTargets)) cursorRing.classList.remove('photo');
+  });
+  document.addEventListener('mousedown', () => cursorRing.style.setProperty('--cs', '0.85'));
+  document.addEventListener('mouseup',   () => cursorRing.style.setProperty('--cs', '1'));
+}
+
+
 // ── Navbar scroll effect ──────────────────────────────
 const navbar = document.getElementById('navbar');
 
