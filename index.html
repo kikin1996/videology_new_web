@@ -25,7 +25,7 @@
   </div>
 
   <!-- ═══════════════════════════════════ NAVBAR ═══════════════════════════════════ -->
-  <header class="navbar" id="navbar">
+  <header class="navbar navbar--over-video" id="navbar">
     <div class="container navbar-inner">
       <a href="#home" class="nav-logo">
         <img src="img/logo.png" alt="Videology" class="brand-logo">
@@ -35,7 +35,19 @@
         <a href="#home">Domů</a>
         <a href="#vysledky">Ukázky</a>
         <a href="#jak-pracujeme">O nás</a>
-        <a href="#kontakt">Kontakt</a>
+        <div class="nav-dropdown">
+          <button type="button" class="nav-dropdown-trigger">
+            Služby
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="nav-dropdown-menu">
+            <a href="videoprohlidka.html">Videoprohlídka</a>
+            <a href="fotogalerie.html">Fotogalerie</a>
+            <a href="virtualni-model.html">Matterport model</a>
+          </div>
+        </div>
+        <a href="cenik.html">Ceník</a>
+        <a href="kontakt.html">Kontakt</a>
       </nav>
       <a href="#kontakt" class="btn nav-cta">Nezávazná nabídka</a>
       <button class="nav-toggle" id="navToggle" aria-label="Otevřít menu">
@@ -49,7 +61,7 @@
   <!-- ═══════════════════════════════════ HERO ════════════════════════════════════ -->
   <section class="hero" id="home">
     <video class="hero-video" autoplay muted loop playsinline preload="auto">
-      <source src="video/hero.mp4" type="video/mp4">
+      <source src="video/Videology - promo video na šířku.mp4" type="video/mp4">
     </video>
     <div class="container hero-inner">
       <div class="hero-text">
@@ -81,7 +93,6 @@
     </div>
 
     <div class="hero-bottombar">
-      <img src="img/logo.png" alt="Videology" class="brand-logo brand-logo--lg">
       <div class="hero-contacts">
         <div class="hero-contact-item">
           <span class="hero-contact-icon">
@@ -98,7 +109,7 @@
           </span>
           <span class="hero-contact-text">
             <span>zavolejte nám</span>
-            <strong>+420 123 456 789</strong>
+            <strong>+420 777 726 001</strong>
           </span>
         </div>
       </div>
@@ -113,21 +124,19 @@
     <div class="ticker-wrapper">
       <div class="ticker-track">
         <span class="ticker-item"><span class="ticker-sep">◆</span> RE/MAX</span>
-        <span class="ticker-item"><span class="ticker-sep">◆</span> Svoboda & Williams</span>
-        <span class="ticker-item"><span class="ticker-sep">◆</span> Century 21</span>
-        <span class="ticker-item"><span class="ticker-sep">◆</span> ERA Reality</span>
-        <span class="ticker-item"><span class="ticker-sep">◆</span> Engel & Völkers</span>
         <span class="ticker-item"><span class="ticker-sep">◆</span> M&M Reality</span>
-        <span class="ticker-item"><span class="ticker-sep">◆</span> Sting Reality</span>
-        <span class="ticker-item"><span class="ticker-sep">◆</span> Lexxus Norton</span>
+        <span class="ticker-item"><span class="ticker-sep">◆</span> Kurko reality</span>
+        <span class="ticker-item"><span class="ticker-sep">◆</span> Heart reality</span>
+        <span class="ticker-item"><span class="ticker-sep">◆</span> Lidové reality</span>
+        <span class="ticker-item"><span class="ticker-sep">◆</span> Neon reality</span>
+        <span class="ticker-item"><span class="ticker-sep">◆</span> Foreigners reality</span>
         <span class="ticker-item"><span class="ticker-sep">◆</span> RE/MAX</span>
-        <span class="ticker-item"><span class="ticker-sep">◆</span> Svoboda & Williams</span>
-        <span class="ticker-item"><span class="ticker-sep">◆</span> Century 21</span>
-        <span class="ticker-item"><span class="ticker-sep">◆</span> ERA Reality</span>
-        <span class="ticker-item"><span class="ticker-sep">◆</span> Engel & Völkers</span>
         <span class="ticker-item"><span class="ticker-sep">◆</span> M&M Reality</span>
-        <span class="ticker-item"><span class="ticker-sep">◆</span> Sting Reality</span>
-        <span class="ticker-item"><span class="ticker-sep">◆</span> Lexxus Norton</span>
+        <span class="ticker-item"><span class="ticker-sep">◆</span> Kurko reality</span>
+        <span class="ticker-item"><span class="ticker-sep">◆</span> Heart reality</span>
+        <span class="ticker-item"><span class="ticker-sep">◆</span> Lidové reality</span>
+        <span class="ticker-item"><span class="ticker-sep">◆</span> Neon reality</span>
+        <span class="ticker-item"><span class="ticker-sep">◆</span> Foreigners reality</span>
       </div>
     </div>
   </section>
@@ -138,12 +147,12 @@
       <div class="results-header fade-up">
         <div class="section-label">Výsledky</div>
         <h2 class="section-title">
-          Prodej vily za 15M Kč<br>
-          skrze <em>vizuální storytelling</em>
+          Všechno začíná<br>
+          u <em>detailu</em>
         </h2>
         <p class="section-subtitle">
-          Pomohli jsme prémiové nemovitosti vyniknout na přeplněném trhu<br>
-          s kinematografickými vizuály nejvyšší kvality
+          Potrpíme si na kvalitně odvedenou práci a důkladné zaměření<br>
+          všech důležitých detailů vaší nemovitosti.
         </p>
         <a href="#kontakt" class="btn btn-dark">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
@@ -151,19 +160,116 @@
         </a>
       </div>
 
-      <div class="results-grid">
-        <div class="result-card fade-up" style="--delay:0.1s">
-          <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=500&h=620&fit=crop&crop=center&auto=format" alt="Hillcrest Estate">
-          <div class="card-handle">@hillcrest.estate</div>
+      <div class="results-toggle fade-up">
+        <button type="button" class="results-toggle-btn active" data-track="reels">Reels</button>
+        <button type="button" class="results-toggle-btn" data-track="wide">Videoprohlídky</button>
+      </div>
+
+      <div class="results-carousel">
+        <div class="results-track" id="resultsTrackReels" data-track="reels">
+          <div class="result-card video-card fade-up" style="--delay:0.1s">
+            <video src="video/Reels - Frýdek.mp4" muted loop playsinline preload="none" poster="img/posters/Reels - Frýdek.jpg"></video>
+            <span class="video-play">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            </span>
+            <div class="card-handle">Byt Frýdek-Místek</div>
+          </div>
+          <div class="result-card video-card result-card--raised fade-up" style="--delay:0.2s">
+            <video src="video/Třinec - Reels.mp4" muted loop playsinline preload="none" poster="img/posters/Třinec - Reels.jpg"></video>
+            <span class="video-play">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            </span>
+            <div class="card-handle">Byt Třinec</div>
+          </div>
+          <div class="result-card video-card fade-up" style="--delay:0.3s">
+            <video src="video/Vidče - reels.mp4" muted loop playsinline preload="none" poster="img/posters/Vidče - reels.jpg"></video>
+            <span class="video-play">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            </span>
+            <div class="card-handle">Byt Vidče</div>
+          </div>
+          <div class="result-card video-card result-card--raised fade-up" style="--delay:0.1s">
+            <video src="video/Zábřeh - Reels.mp4" muted loop playsinline preload="none" poster="img/posters/Zábřeh - Reels.jpg"></video>
+            <span class="video-play">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            </span>
+            <div class="card-handle">Byt Zábřeh</div>
+          </div>
+          <div class="result-card video-card fade-up" style="--delay:0.2s">
+            <video src="video/Rybí - Oprava reels 3.mp4" muted loop playsinline preload="none" poster="img/posters/Rybí - Oprava reels 3.jpg"></video>
+            <span class="video-play">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            </span>
+            <div class="card-handle">Rodinný dům Rybí</div>
+          </div>
+          <div class="result-card video-card result-card--raised fade-up" style="--delay:0.3s">
+            <video src="video/hermanice oprava.mp4" muted loop playsinline preload="none" poster="img/posters/hermanice oprava.jpg"></video>
+            <span class="video-play">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            </span>
+            <div class="card-handle">Rodinný dům Heřmanice</div>
+          </div>
         </div>
-        <div class="result-card result-card--raised fade-up" style="--delay:0.2s">
-          <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=500&h=620&fit=crop&crop=center&auto=format" alt="Praha Luxury">
-          <div class="card-handle">@prague.luxury</div>
+
+        <div class="results-track" id="resultsTrackWide" data-track="wide" hidden>
+          <div class="result-card result-card--wide video-card fade-up" style="--delay:0.1s">
+            <video src="video/Krmelín - Prohlídka oprava.mp4" muted loop playsinline preload="none" poster="img/posters/Krmelín - Prohlídka oprava.jpg"></video>
+            <span class="video-play">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            </span>
+            <div class="card-handle">Rodinný dům Krmelín</div>
+          </div>
+          <div class="result-card result-card--wide video-card fade-up" style="--delay:0.2s">
+            <video src="video/Lizstwan - Dobratice prohlídka.mp4" muted loop playsinline preload="none" poster="img/posters/Lizstwan - Dobratice prohlídka.jpg"></video>
+            <span class="video-play">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            </span>
+            <div class="card-handle">Pozemek Dobratice</div>
+          </div>
+          <div class="result-card result-card--wide video-card fade-up" style="--delay:0.3s">
+            <video src="video/Opava - Prohlídka oprava vizitky.mp4" muted loop playsinline preload="none" poster="img/posters/Opava - Prohlídka oprava vizitky.jpg"></video>
+            <span class="video-play">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            </span>
+            <div class="card-handle">Byt Kravaře</div>
+          </div>
+          <div class="result-card result-card--wide video-card fade-up" style="--delay:0.1s">
+            <video src="video/Pardubice 1 - Prohlídka.mp4" muted loop playsinline preload="none" poster="img/posters/Pardubice 1 - Prohlídka.jpg"></video>
+            <span class="video-play">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            </span>
+            <div class="card-handle">Byt Pardubice</div>
+          </div>
+          <div class="result-card result-card--wide video-card fade-up" style="--delay:0.2s">
+            <video src="video/Prohlídka - Třinec.mp4" muted loop playsinline preload="none" poster="img/posters/Prohlídka - Třinec.jpg"></video>
+            <span class="video-play">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            </span>
+            <div class="card-handle">Byt Třinec</div>
+          </div>
+          <div class="result-card result-card--wide video-card fade-up" style="--delay:0.3s">
+            <video src="video/Zábřeh - Videoprohlídka.mp4" muted loop playsinline preload="none" poster="img/posters/Zábřeh - Videoprohlídka.jpg"></video>
+            <span class="video-play">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            </span>
+            <div class="card-handle">Byt Zábřeh</div>
+          </div>
         </div>
-        <div class="result-card fade-up" style="--delay:0.3s">
-          <img src="https://images.unsplash.com/photo-1582407947304-fd86f28f3316?w=500&h=620&fit=crop&crop=center&auto=format" alt="Riverside Retreat">
-          <div class="card-handle">@riverside.retreat</div>
-        </div>
+
+        <button type="button" class="results-arrow results-arrow--prev" id="resultsPrev" aria-label="Předchozí ukázky">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <button type="button" class="results-arrow results-arrow--next" id="resultsNext" aria-label="Další ukázky">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+
+      <!-- ═══════════════════════════════════ VIDEO LIGHTBOX ═══════════════════════════ -->
+      <div class="video-lightbox" id="videoLightbox">
+        <button type="button" class="video-lightbox-close" id="videoLightboxClose" aria-label="Zavřít video">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+        <video id="videoLightboxPlayer" controls playsinline></video>
       </div>
     </div>
   </section>
@@ -174,53 +280,39 @@
       <div class="fade-up">
         <div class="section-label">Jak pracujeme</div>
         <h2 class="section-title">
-          Klademe důraz na detail<br>
-          a <em>jednoduchost</em>
+          V jednoduchosti<br>
+          je <em>krása</em>
         </h2>
       </div>
 
-      <div class="steps-grid">
-        <div class="step-card fade-up" style="--delay:0.1s">
-          <div class="step-badge">1</div>
-          <div class="step-icon">📋</div>
-          <h3>Zjišťování & Strategie</h3>
-          <p>Sladíme cíle, cílové kupce a unikátní příběh každé nemovitosti ještě před prvním záběrem.</p>
-        </div>
-        <div class="step-card fade-up" style="--delay:0.2s">
-          <div class="step-badge">2</div>
-          <div class="step-icon">🎬</div>
-          <h3>Produkce & Storytelling</h3>
-          <p>Od filmových videoprohlídek po vizuály pro sociální sítě — tvoříme obsah, který opravdu prodává.</p>
-        </div>
-        <div class="step-card fade-up" style="--delay:0.3s">
-          <div class="step-badge">3</div>
-          <div class="step-icon">🚀</div>
-          <h3>Spuštění & Výkon</h3>
-          <p>Váš obsah jde živě na Instagram, TikTok, Reels a reklamy — optimalizováno pro maximální dosah.</p>
-        </div>
-      </div>
-
-      <!-- Founder quote -->
-      <div class="quote-grid fade-up">
-        <div class="quote-card">
-          <div class="quote-icon-box">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+      <div class="steps-layout">
+        <div class="steps-col">
+          <div class="step-card fade-up" style="--delay:0.1s">
+            <div class="step-badge">1</div>
+            <img class="step-icon" src="img/ikona1.png" alt="Zjišťování & Strategie">
+            <h3>Plánování natáčení</h3>
+            <p>Ještě před začátkem natáčení si pečlivě naplánujeme všechny typy záběrů a celý průběh natáčení tak, aby byl výsledný obsah co nejefektivnější.</p>
           </div>
-          <blockquote>
-            „Videology bylo postaveno s jedinou misí: proměnit vizuály v <em>reálné výsledky</em> pro český realitní trh."
-          </blockquote>
-          <div class="quote-author">
-            <div class="author-avatar">JN</div>
-            <div class="author-info">
-              <strong>Jan Novák</strong>
-              <span>Zakladatel Videology</span>
-            </div>
+          <div class="step-card fade-up" style="--delay:0.2s">
+            <div class="step-badge">2</div>
+            <img class="step-icon" src="img/ikona2.png" alt="Natáčení">
+            <h3>Natáčení</h3>
+            <p>Termín natáčení sladíme s počasím, denní dobou a světelnými podmínkami v nemovitosti. Cílem je využít přirozené světlo tak, aby prostor vypadal co nejlépe.</p>
+          </div>
+          <div class="step-card fade-up" style="--delay:0.3s">
+            <div class="step-badge">3</div>
+            <img class="step-icon" src="img/ikona3.png" alt="Postprodukce">
+            <h3>Postprodukce</h3>
+            <p>Natočený materiál následně promyšleně zpracujeme. Pomocí AI a dalších moderních nástrojů vytvoříme atraktivní a moderní vzhled.</p>
           </div>
         </div>
-        <div class="quote-photo">
-          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=680&h=460&fit=crop&crop=center&auto=format" alt="Letecký pohled na nemovitost">
+        <a class="quote-photo steps-photo" href="https://www.instagram.com/p/DcbQKlINMeM/" target="_blank" rel="noopener noreferrer" aria-label="Přehrát video na Instagramu">
+          <img src="img/kristian-photo.png" alt="Kristián Karas při natáčení" style="object-position: 25% center;">
+          <span class="quote-photo-play">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          </span>
           <div class="card-handle">@videology.cz</div>
-        </div>
+        </a>
       </div>
     </div>
   </section>
@@ -234,30 +326,101 @@
           Vše, co vaše nemovitost<br>
           <em>potřebuje k prodeji</em>
         </h2>
+        <p class="section-subtitle">
+          Od rychlého střihu přes animace až po originální efekty (jako je zmizení makléře nebo noční
+          záběr na dům) — vaše nabídky díky nim získají moderní vzhled.
+        </p>
       </div>
 
-      <div class="services-grid">
-        <div class="service-card fade-up" style="--delay:0.1s">
-          <div class="service-icon">📷</div>
-          <h3>Profesionální fotografie</h3>
-          <p>HDR fotografie interiérů i exteriérů. Každý záběr pečlivě komponován pro maximální dojem z nemovitosti.</p>
+      <div class="plan-list">
+        <div class="plan-row fade-up" style="--delay:0.1s">
+          <div class="plan-row-info">
+            <span class="plan-row-index">1</span>
+            <h3>Fotografie</h3>
+            <p>Profesionální fotografie exteriéru, interiéru i detailů nemovitosti.</p>
+          </div>
+          <ul class="plan-row-features">
+            <li>15 ks zpracovaných fotografií</li>
+            <li>Každá další fotografie +60 Kč</li>
+          </ul>
+          <div class="plan-row-cta">
+            <div class="plan-row-price">2 500 Kč</div>
+            <a href="#kontakt" class="btn btn-dark plan-order-btn" data-package="Fotografie">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              Objednat
+            </a>
+          </div>
         </div>
-        <div class="service-card fade-up" style="--delay:0.15s">
-          <div class="service-icon">🎥</div>
-          <h3>Filmové videoprohlídky</h3>
-          <p>Kinematografické video, které provede zájemce prostorem a vytvoří silný emocionální zájem o koupi.</p>
+
+        <div class="plan-row plan-row--featured fade-up" style="--delay:0.2s">
+          <div class="plan-row-info">
+            <span class="plan-row-index">2</span>
+            <h3>Standard <span class="package-badge">Populární</span></h3>
+            <p>Kompletní fotodokumentace doplněná o videoprohlídku nemovitosti.</p>
+          </div>
+          <ul class="plan-row-features">
+            <li>Fotografie 15 ks</li>
+            <li>Videoprohlídka nemovitosti</li>
+            <li>Jednodušší střih a editing</li>
+          </ul>
+          <div class="plan-row-cta">
+            <div class="plan-row-price">7 500 Kč</div>
+            <a href="#kontakt" class="btn btn-dark plan-order-btn" data-package="Standard">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              Objednat
+            </a>
+          </div>
         </div>
-        <div class="service-card fade-up" style="--delay:0.2s">
-          <div class="service-icon">🚁</div>
-          <h3>Drone záběry</h3>
-          <p>Vzdušné záběry, které ukáží polohu, okolí a celkový dojem nemovitosti z unikátní perspektivy.</p>
+
+        <div class="plan-row fade-up" style="--delay:0.3s">
+          <div class="plan-row-info">
+            <span class="plan-row-index">3</span>
+            <h3>Maxi</h3>
+            <p>Dynamická prezentace s dronovými záběry a AI efekty.</p>
+          </div>
+          <ul class="plan-row-features">
+            <li>Fotografie 15 ks</li>
+            <li>Dynamický střih videa</li>
+            <li>Dronové záběry</li>
+            <li>AI animace a efekty</li>
+            <li>1 jednoduchý Reels zdarma</li>
+            <li>Fotografie do 2 pracovních dnů, video do 5</li>
+          </ul>
+          <div class="plan-row-cta">
+            <div class="plan-row-price plan-row-price--tbd">?</div>
+            <a href="#kontakt" class="btn btn-dark plan-order-btn" data-package="Maxi">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              Objednat
+            </a>
+          </div>
         </div>
-        <div class="service-card fade-up" style="--delay:0.25s">
-          <div class="service-icon">📱</div>
-          <h3>Obsah pro sociální sítě</h3>
-          <p>Reels, TikTok videa a příspěvky optimalizované pro Instagram a Facebook algoritmy pro maximální organický dosah.</p>
+
+        <div class="plan-row fade-up" style="--delay:0.4s">
+          <div class="plan-row-info">
+            <span class="plan-row-index">4</span>
+            <h3>Premium</h3>
+            <p>Maximální prezentace nemovitosti pro všechny kanály.</p>
+          </div>
+          <ul class="plan-row-features">
+            <li>Videoprohlídka — dynamický střih</li>
+            <li>Reels</li>
+            <li>2D/3D půdorys</li>
+            <li>AI vizualizace a staging</li>
+            <li>2 jednoduché Reels zdarma</li>
+          </ul>
+          <div class="plan-row-cta">
+            <div class="plan-row-price">11 750 Kč</div>
+            <a href="#kontakt" class="btn btn-dark plan-order-btn" data-package="Premium">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              Objednat
+            </a>
+          </div>
         </div>
       </div>
+
+      <p class="pricing-note fade-up">
+        Podrobný přehled všech služeb najdete na stránce <a href="cenik.html">Ceník</a>.
+      </p>
     </div>
   </section>
 
@@ -267,7 +430,7 @@
       <div class="stats-grid">
         <div class="stat-item fade-up" style="--delay:0.1s">
           <div class="stat-row">
-            <span class="stat-number" data-target="150">0</span>
+            <span class="stat-number" data-target="800">0</span>
             <span class="stat-suffix">+</span>
           </div>
           <div class="stat-label">Nemovitostí nafoceno</div>
@@ -281,14 +444,14 @@
         </div>
         <div class="stat-item fade-up" style="--delay:0.2s">
           <div class="stat-row">
-            <span class="stat-number" data-target="98">0</span>
+            <span class="stat-number" data-target="95">0</span>
             <span class="stat-suffix">%</span>
           </div>
           <div class="stat-label">Spokojených klientů</div>
         </div>
         <div class="stat-item fade-up" style="--delay:0.25s">
           <div class="stat-row">
-            <span class="stat-number" data-target="24">0</span>
+            <span class="stat-number" data-target="48">0</span>
             <span class="stat-suffix">h</span>
           </div>
           <div class="stat-label">Dodání fotografií</div>
@@ -311,6 +474,29 @@
         </p>
 
         <form class="contact-form" id="contactForm" novalidate>
+          <input type="hidden" name="access_key" value="700cf7c3-3d35-4d23-aad1-de36ebc13140">
+          <input type="hidden" name="subject" value="Nová poptávka z webu Videology.cz">
+          <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+
+          <div class="booking-calendar">
+            <span class="booking-calendar-label">Vyberte termín natáčení</span>
+            <div class="booking-cal-days" id="bookingDays"></div>
+            <div class="booking-cal-times" id="bookingTimes" hidden></div>
+            <p class="booking-summary" id="bookingSummary">Nejprve vyberte den.</p>
+            <input type="hidden" name="Preferovaný termín" id="bookingTerminInput">
+          </div>
+
+          <div class="form-field">
+            <select name="Balíček" id="packageSelect">
+              <option value="">Vyberte balíček (volitelné)</option>
+              <option value="Fotografie">Fotografie — 2 500 Kč</option>
+              <option value="Standard">Standard — 7 500 Kč</option>
+              <option value="Maxi">Maxi</option>
+              <option value="Premium">Premium — 11 750 Kč</option>
+              <option value="Nejsem si jistý/á">Nejsem si jistý/á, poraďte mi</option>
+            </select>
+          </div>
+
           <div class="form-row">
             <div class="form-field">
               <input type="text" name="name" placeholder="Vaše jméno" required>
@@ -332,7 +518,7 @@
           </div>
           <button type="submit" class="btn btn-dark btn-submit" id="submitBtn">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-            Odeslat poptávku
+            Objednat
           </button>
           <p class="form-note">Odpovíme vám do 24 hodin. Bez závazků, bez poplatků za konzultaci.</p>
         </form>
@@ -350,13 +536,10 @@
           </a>
           <p>Profesionální fotografie a filmové videoprohlídky nemovitostí po celé České republice.</p>
           <div class="footer-social">
-            <a href="#" aria-label="Instagram" class="social-icon">
+            <a href="https://www.instagram.com/videology.cz/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-icon">
               <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
             </a>
-            <a href="#" aria-label="LinkedIn" class="social-icon">
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-            </a>
-            <a href="#" aria-label="YouTube" class="social-icon">
+            <a href="https://www.youtube.com/@videology_cz3250" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="social-icon">
               <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
             </a>
           </div>
@@ -367,22 +550,23 @@
           <a href="#home">Domů</a>
           <a href="#vysledky">Ukázky práce</a>
           <a href="#jak-pracujeme">O nás</a>
-          <a href="#kontakt">Kontakt</a>
+          <a href="cenik.html">Ceník</a>
+          <a href="kontakt.html">Kontakt</a>
         </div>
 
         <div class="footer-col">
           <h4>Služby</h4>
-          <a href="#">Fotografie nemovitostí</a>
-          <a href="#">Filmové videoprohlídky</a>
-          <a href="#">Drone záběry</a>
-          <a href="#">Sociální obsah</a>
+          <a href="videoprohlidka.html">Videoprohlídka</a>
+          <a href="fotogalerie.html">Fotogalerie</a>
+          <a href="virtualni-model.html">Matterport model</a>
+          <a href="cenik.html">Ceník</a>
         </div>
 
         <div class="footer-col">
           <h4>Kontakt</h4>
           <a href="mailto:info@videology.cz">info@videology.cz</a>
-          <a href="tel:+420123456789">+420 123 456 789</a>
-          <span>Praha, Česká republika</span>
+          <a href="tel:+420777726001">+420 777 726 001</a>
+          <span>Frýdek-Místek, Česká republika</span>
         </div>
       </div>
 
