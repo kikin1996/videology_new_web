@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fotogalerie – Videology.cz</title>
+  <meta name="description" content="Fotogalerie nemovitostí — ukázky naší fotografické práce. Videology.cz.">
+  <link rel="icon" type="image/png" href="img/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400;1,700&family=Inter:wght@300;400;500;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════ NAVBAR ═══════════════════════════════════ -->
+  <header class="navbar" id="navbar">
+    <div class="container navbar-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="img/logo.png" alt="Videology" class="brand-logo">
+        <span class="brand-wordmark">VIDEOLOGY</span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Domů</a>
+        <a href="index.html#vysledky">Ukázky</a>
+        <a href="index.html#jak-pracujeme">O nás</a>
+        <div class="nav-dropdown">
+          <button type="button" class="nav-dropdown-trigger">
+            Služby
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="nav-dropdown-menu">
+            <a href="videoprohlidka.html">Videoprohlídka</a>
+            <a href="fotogalerie.html">Fotogalerie</a>
+            <a href="virtualni-model.html">Matterport model</a>
+          </div>
+        </div>
+        <a href="cenik-videology.pdf" target="_blank" rel="noopener">Ceník</a>
+        <a href="kontakt.html">Kontakt</a>
+      </nav>
+      <a href="index.html#kontakt" class="btn nav-cta">Nezávazná nabídka</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Otevřít menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════ PAGE HEADER ══════════════════════════════ -->
+  <section class="pricing-hero">
+    <div class="container">
+      <div class="results-header fade-up">
+        <div class="section-label">Fotogalerie</div>
+        <h2 class="section-title">
+          Ukázky naší<br>
+          <em>fotografické práce</em>
+        </h2>
+        <p class="section-subtitle">
+          Výběr z desítek nafocených nemovitostí po celé České republice.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════ GALLERY ═══════════════════════════════════ -->
+  <section class="gallery-section">
+    <div class="container">
+      <div class="gallery-grid">
+        <div class="gallery-item fade-up"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=800&fit=crop&crop=center&auto=format" alt="Interiér nemovitosti"></div>
+        <div class="gallery-item fade-up"><img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&h=450&fit=crop&crop=center&auto=format" alt="Exteriér nemovitosti"></div>
+        <div class="gallery-item fade-up"><img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=600&h=700&fit=crop&crop=center&auto=format" alt="Obývací prostor"></div>
+        <div class="gallery-item fade-up"><img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=600&h=780&fit=crop&crop=center&auto=format" alt="Letecký pohled"></div>
+        <div class="gallery-item fade-up"><img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&h=750&fit=crop&crop=center&auto=format" alt="Bazén a terasa"></div>
+        <div class="gallery-item fade-up"><img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=600&h=500&fit=crop&crop=center&auto=format" alt="Kuchyňský kout"></div>
+        <div class="gallery-item fade-up"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&h=780&fit=crop&crop=center&auto=format" alt="Vstupní hala"></div>
+        <div class="gallery-item fade-up"><img src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=600&h=480&fit=crop&crop=center&auto=format" alt="Ložnice"></div>
+        <div class="gallery-item fade-up"><img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=600&h=760&fit=crop&crop=center&auto=format" alt="Koupelna"></div>
+        <div class="gallery-item fade-up"><img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=600&h=500&fit=crop&crop=center&auto=format" alt="Zahrada"></div>
+        <div class="gallery-item fade-up"><img src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?w=600&h=700&fit=crop&crop=center&auto=format" alt="Fasáda domu"></div>
+        <div class="gallery-item fade-up"><img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&h=460&fit=crop&crop=center&auto=format" alt="Pracovna"></div>
+      </div>
+
+      <p class="pricing-note fade-up">
+        Toto jsou ukázkové fotografie. Chcete profesionální fotky i pro vaši nemovitost?
+        <a href="index.html#kontakt">Napište nám</a> — cenu najdete na stránce
+        <a href="cenik-videology.pdf" target="_blank" rel="noopener">Ceník</a>.
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════ FOOTER ═══════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-brand">
+          <a href="index.html" class="nav-logo footer-logo">
+            <img src="img/logo.png" alt="Videology" class="brand-logo brand-logo--lg">
+          </a>
+          <p>Profesionální fotografie a filmové videoprohlídky nemovitostí po celé České republice.</p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/videology.cz/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-icon">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="https://www.youtube.com/@videology_cz3250" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="social-icon">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigace</h4>
+          <a href="index.html">Domů</a>
+          <a href="index.html#vysledky">Ukázky práce</a>
+          <a href="index.html#jak-pracujeme">O nás</a>
+          <a href="kontakt.html">Kontakt</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Služby</h4>
+          <a href="videoprohlidka.html">Videoprohlídka</a>
+          <a href="fotogalerie.html">Fotogalerie</a>
+          <a href="virtualni-model.html">Matterport model</a>
+          <a href="cenik-videology.pdf" target="_blank" rel="noopener">Ceník</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Kontakt</h4>
+          <a href="mailto:info@videology.cz">info@videology.cz</a>
+          <a href="tel:+420777726001">+420 777 726 001</a>
+          <span>Frýdek-Místek, Česká republika</span>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 Videology.cz – Všechna práva vyhrazena</p>
+        <p>Vytvořeno pro český realitní trh</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

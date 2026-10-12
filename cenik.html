@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ceník – Videology.cz</title>
+  <meta name="description" content="Ceník fotografických a video služeb pro nemovitosti — Videology.cz.">
+  <link rel="icon" type="image/png" href="img/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400;1,700&family=Inter:wght@300;400;500;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════ NAVBAR ═══════════════════════════════════ -->
+  <header class="navbar" id="navbar">
+    <div class="container navbar-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="img/logo.png" alt="Videology" class="brand-logo">
+        <span class="brand-wordmark">VIDEOLOGY</span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Domů</a>
+        <a href="index.html#vysledky">Ukázky</a>
+        <a href="index.html#jak-pracujeme">O nás</a>
+        <div class="nav-dropdown">
+          <button type="button" class="nav-dropdown-trigger">
+            Služby
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="nav-dropdown-menu">
+            <a href="videoprohlidka.html">Videoprohlídka</a>
+            <a href="fotogalerie.html">Fotogalerie</a>
+            <a href="virtualni-model.html">Matterport model</a>
+          </div>
+        </div>
+        <a href="cenik.html">Ceník</a>
+        <a href="kontakt.html">Kontakt</a>
+      </nav>
+      <a href="index.html#kontakt" class="btn nav-cta">Nezávazná nabídka</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Otevřít menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════ PRICING HEADER ═══════════════════════════ -->
+  <section class="pricing-hero">
+    <div class="container">
+      <div class="results-header fade-up">
+        <div class="section-label">Ceník</div>
+        <h2 class="section-title">
+          Transparentní ceny,<br>
+          <em>žádná překvapení</em>
+        </h2>
+        <p class="section-subtitle">
+          Vyberte si balíček podle velikosti nemovitosti a vašich potřeb.<br>
+          Vše lze kombinovat i objednat samostatně.
+        </p>
+        <a href="cenik-videology.pdf" target="_blank" rel="noopener" class="btn btn-outline pdf-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><polyline points="14 3 14 8 19 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="15" y2="17"/></svg>
+          Detailní PDF ceník
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="8 7 17 7 17 16"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════ BALÍČKY ══════════════════════════════════ -->
+  <section class="services-section" style="padding-top:0;">
+    <div class="container">
+      <div class="plan-list">
+        <div class="plan-row fade-up" style="--delay:0.1s">
+          <div class="plan-row-info">
+            <span class="plan-row-index">1</span>
+            <h3>Fotografie</h3>
+            <p>Profesionální fotografie exteriéru a interiéru nemovitosti.</p>
+          </div>
+          <ul class="plan-row-features">
+            <li>Fotografie 15 ks<span class="plan-row-note">Každá další fotografie +60 Kč<br>Dron v ceně</span></li>
+          </ul>
+          <div class="plan-row-cta">
+            <div class="plan-row-price">od 2 500 Kč</div>
+            <a href="index.html#kontakt" class="btn btn-dark plan-order-btn" data-package="Fotografie">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              Objednat
+            </a>
+          </div>
+        </div>
+
+        <div class="plan-row plan-row--featured fade-up" style="--delay:0.2s">
+          <div class="plan-row-info">
+            <span class="plan-row-index">2</span>
+            <h3>Standard</h3>
+            <p>Kompletní fotodokumentace doplněná o videoprohlídku nemovitosti.</p>
+          </div>
+          <ul class="plan-row-features">
+            <li>Fotografie 15 ks<span class="plan-row-note">Každá další fotografie +60 Kč<br>Dron v ceně</span></li>
+            <li>Videoprohlídka nebo Reels video – jednodušší střih a editing</li>
+          </ul>
+          <div class="plan-row-cta">
+            <div class="plan-row-price">od 7 000 Kč</div>
+            <a href="index.html#kontakt" class="btn btn-dark plan-order-btn" data-package="Standard">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              Objednat
+            </a>
+          </div>
+        </div>
+
+        <div class="plan-row fade-up" style="--delay:0.3s">
+          <div class="plan-row-info">
+            <span class="plan-row-index">3</span>
+            <h3>Maxi <span class="package-badge">Populární</span></h3>
+            <p>Dynamická prezentace s dronovými záběry a AI efekty.</p>
+          </div>
+          <ul class="plan-row-features">
+            <li>Fotografie 15 ks<span class="plan-row-note">Každá další fotografie +60 Kč<br>Dron v ceně</span></li>
+            <li>Videoprohlídka nebo Reels video – dynamický střih a editing</li>
+            <li>AI animace a efekty</li>
+            <li>1 jednoduchý Reels zdarma</li>
+          </ul>
+          <div class="plan-row-cta">
+            <div class="plan-row-price">od 9 000 Kč</div>
+            <a href="index.html#kontakt" class="btn btn-dark plan-order-btn" data-package="Maxi">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              Objednat
+            </a>
+          </div>
+        </div>
+
+        <div class="plan-row fade-up" style="--delay:0.4s">
+          <div class="plan-row-info">
+            <span class="plan-row-index">4</span>
+            <h3>Premium</h3>
+            <p>Maximální prezentace nemovitosti pro všechny kanály.</p>
+          </div>
+          <ul class="plan-row-features">
+            <li>Fotografie 15 ks<span class="plan-row-note">Každá další fotografie +60 Kč<br>Dron v ceně</span></li>
+            <li>Videoprohlídka i Reels video – dynamický střih a editing</li>
+            <li>2D/3D půdorys</li>
+            <li>AI vizualizace a staging</li>
+            <li>2 jednoduché Reels zdarma</li>
+          </ul>
+          <div class="plan-row-cta">
+            <div class="plan-row-price">od 14 000 Kč</div>
+            <a href="index.html#kontakt" class="btn btn-dark plan-order-btn" data-package="Premium">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              Objednat
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <p class="pricing-note fade-up">Naše rychlost: fotografie dodáváme do 2 pracovních dnů, videa do 5 pracovních dnů.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════ PRICING ROWS ═════════════════════════════ -->
+  <section class="pricing-section">
+    <div class="container">
+      <p class="pricing-note fade-up">
+        Ceny jsou orientační a odvíjí se od velikosti a lokality nemovitosti. Pro přesnou nabídku nás
+        <a href="index.html#kontakt">kontaktujte</a> — do 24 hodin vám pošleme individuální kalkulaci.
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════ FOOTER ═══════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-brand">
+          <a href="index.html" class="nav-logo footer-logo">
+            <img src="img/logo.png" alt="Videology" class="brand-logo brand-logo--lg">
+          </a>
+          <p>Profesionální fotografie a filmové videoprohlídky nemovitostí po celé České republice.</p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/videology.cz/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-icon">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="https://www.youtube.com/@videology_cz3250" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="social-icon">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigace</h4>
+          <a href="index.html">Domů</a>
+          <a href="index.html#vysledky">Ukázky práce</a>
+          <a href="index.html#jak-pracujeme">O nás</a>
+          <a href="kontakt.html">Kontakt</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Služby</h4>
+          <a href="videoprohlidka.html">Videoprohlídka</a>
+          <a href="fotogalerie.html">Fotogalerie</a>
+          <a href="virtualni-model.html">Matterport model</a>
+          <a href="cenik.html">Ceník</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Kontakt</h4>
+          <a href="mailto:info@videology.cz">info@videology.cz</a>
+          <a href="tel:+420777726001">+420 777 726 001</a>
+          <span>Frýdek-Místek, Česká republika</span>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 Videology.cz – Všechna práva vyhrazena</p>
+        <p>Vytvořeno pro český realitní trh</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
