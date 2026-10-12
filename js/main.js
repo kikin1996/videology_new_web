@@ -176,56 +176,175 @@ if (packageSelect) {
   }
 }
 
-// ── Booking calendar (date + time picker, no live availability check) ──
-const bookingDaysEl  = document.getElementById('bookingDays');
+// ── Booking calendar (month view + time slots, no live availability check) ──
+const calGrid        = document.getElementById('calGrid');
+const calTitle       = document.getElementById('calTitle');
+const calPrev        = document.getElementById('calPrev');
+const calNext        = document.getElementById('calNext');
 const bookingTimesEl = document.getElementById('bookingTimes');
 const bookingSummary = document.getElementById('bookingSummary');
 const bookingInput   = document.getElementById('bookingTerminInput');
 
-const DAY_NAMES_CZ   = ['Ne', 'Po', 'Út', 'St', 'Čt', 'Pá', 'So'];
-const MONTH_NAMES_CZ = ['led', 'úno', 'bře', 'dub', 'kvě', 'čvn', 'čvc', 'srp', 'zář', 'říj', 'lis', 'pro'];
+const MONTH_FULL_CZ = ['Leden', 'Únor', 'Březen', 'Duben', 'Květen', 'Červen', 'Červenec', 'Srpen', 'Září', 'Říjen', 'Listopad', 'Prosinec'];
 const BOOKING_TIME_SLOTS = ['08:00', '09:30', '11:00', '12:30', '14:00', '15:30', '17:00'];
+const BOOKING_MONTHS_AHEAD = 5;
 
-if (bookingDaysEl) {
-  let selectedDateLabel = '';
+let calViewYear, calViewMonth, selectedDate = null;
 
-  for (let i = 0; i < 21; i++) {
-    const d = new Date();
-    d.setDate(d.getDate() + i);
+function bookingStartOfToday() {
+  const t = new Date();
+  return new Date(t.getFullYear(), t.getMonth(), t.getDate());
+}
 
-    const dayBtn = document.createElement('button');
-    dayBtn.type = 'button';
-    dayBtn.className = 'booking-day';
-    dayBtn.innerHTML = `<span>${DAY_NAMES_CZ[d.getDay()]}</span><span>${d.getDate()}. ${MONTH_NAMES_CZ[d.getMonth()]}</span>`;
+function renderCalendar() {
+  const today = bookingStartOfToday();
+  const first = new Date(calViewYear, calViewMonth, 1);
+  const offset = (first.getDay() + 6) % 7; // Monday-first
+  const daysInMonth = new Date(calViewYear, calViewMonth + 1, 0).getDate();
 
-    dayBtn.addEventListener('click', () => {
-      bookingDaysEl.querySelectorAll('.booking-day').forEach(b => b.classList.remove('is-selected'));
-      dayBtn.classList.add('is-selected');
-      selectedDateLabel = `${d.getDate()}. ${d.getMonth() + 1}. ${d.getFullYear()}`;
-      bookingInput.value = '';
-      bookingSummary.textContent = 'Vyberte prosím čas natáčení.';
-      bookingSummary.classList.remove('is-set', 'is-error');
+  calTitle.textContent = `${MONTH_FULL_CZ[calViewMonth]} ${calViewYear}`;
+  calGrid.innerHTML = '';
 
-      bookingTimesEl.innerHTML = '';
-      bookingTimesEl.hidden = false;
-      BOOKING_TIME_SLOTS.forEach(time => {
-        const timeBtn = document.createElement('button');
-        timeBtn.type = 'button';
-        timeBtn.className = 'booking-time';
-        timeBtn.textContent = time;
-        timeBtn.addEventListener('click', () => {
-          bookingTimesEl.querySelectorAll('.booking-time').forEach(b => b.classList.remove('is-selected'));
-          timeBtn.classList.add('is-selected');
-          bookingInput.value = `${selectedDateLabel} v ${time}`;
-          bookingSummary.textContent = `Vybraný termín: ${selectedDateLabel} v ${time}`;
-          bookingSummary.classList.add('is-set');
-          bookingSummary.classList.remove('is-error');
-        });
-        bookingTimesEl.appendChild(timeBtn);
-      });
+  for (let i = 0; i < offset; i++) {
+    const blank = document.createElement('span');
+    blank.className = 'cal-empty';
+    calGrid.appendChild(blank);
+  }
+
+  for (let day = 1; day <= daysInMonth; day++) {
+    const date = new Date(calViewYear, calViewMonth, day);
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'cal-day';
+    btn.textContent = day;
+    if (date < today) btn.disabled = true;
+    if (date.getTime() === today.getTime()) btn.classList.add('is-today');
+    if (selectedDate && date.getTime() === selectedDate.getTime()) btn.classList.add('is-selected');
+    btn.addEventListener('click', () => selectBookingDay(date));
+    calGrid.appendChild(btn);
+  }
+
+  calPrev.disabled = calViewYear === today.getFullYear() && calViewMonth === today.getMonth();
+  const monthsFromNow = (calViewYear - today.getFullYear()) * 12 + (calViewMonth - today.getMonth());
+  calNext.disabled = monthsFromNow >= BOOKING_MONTHS_AHEAD;
+}
+
+function selectBookingDay(date) {
+  selectedDate = date;
+  bookingInput.value = '';
+  bookingSummary.textContent = 'Vyberte prosím čas natáčení.';
+  bookingSummary.classList.remove('is-set', 'is-error');
+  renderCalendar();
+
+  const label = `${date.getDate()}. ${date.getMonth() + 1}. ${date.getFullYear()}`;
+  bookingTimesEl.innerHTML = '';
+  bookingTimesEl.hidden = false;
+  BOOKING_TIME_SLOTS.forEach(time => {
+    const timeBtn = document.createElement('button');
+    timeBtn.type = 'button';
+    timeBtn.className = 'booking-time';
+    timeBtn.textContent = time;
+    timeBtn.addEventListener('click', () => {
+      bookingTimesEl.querySelectorAll('.booking-time').forEach(b => b.classList.remove('is-selected'));
+      timeBtn.classList.add('is-selected');
+      bookingInput.value = `${label} v ${time}`;
+      bookingSummary.textContent = `Vybraný termín: ${label} v ${time}`;
+      bookingSummary.classList.add('is-set');
+      bookingSummary.classList.remove('is-error');
     });
+    bookingTimesEl.appendChild(timeBtn);
+  });
+}
 
-    bookingDaysEl.appendChild(dayBtn);
+function resetBooking() {
+  selectedDate = null;
+  bookingInput.value = '';
+  bookingTimesEl.innerHTML = '';
+  bookingTimesEl.hidden = true;
+  bookingSummary.textContent = 'Nejprve vyberte den.';
+  bookingSummary.classList.remove('is-set', 'is-error');
+  const now = new Date();
+  calViewYear = now.getFullYear();
+  calViewMonth = now.getMonth();
+  renderCalendar();
+}
+
+if (calGrid) {
+  const now = new Date();
+  calViewYear = now.getFullYear();
+  calViewMonth = now.getMonth();
+  renderCalendar();
+
+  calPrev.addEventListener('click', () => {
+    calViewMonth--;
+    if (calViewMonth < 0) { calViewMonth = 11; calViewYear--; }
+    renderCalendar();
+  });
+  calNext.addEventListener('click', () => {
+    calViewMonth++;
+    if (calViewMonth > 11) { calViewMonth = 0; calViewYear++; }
+    renderCalendar();
+  });
+}
+
+// ── Form validation ──────────────────────────────────
+const FIELD_RULES = {
+  name(v) {
+    const words = v.trim().split(/\s+/).filter(Boolean);
+    const letters = (v.match(/\p{L}/gu) || []).length;
+    if (!v.trim()) return 'Zadejte své jméno a příjmení.';
+    if (words.length < 2 || letters < 3) return 'Zadejte jméno i příjmení.';
+    if (!/^[\p{L}\p{M}\s'’.\-]+$/u.test(v.trim())) return 'Jméno může obsahovat jen písmena.';
+    return '';
+  },
+  email(v) {
+    v = v.trim();
+    if (!v) return 'Zadejte svůj e-mail.';
+    if (v.length > 254 || !/^[^\s@]+@[^\s@]+\.[^\s@.]{2,}$/.test(v) || v.includes('..')) return 'Zadejte platný e-mail, např. jmeno@email.cz.';
+    return '';
+  },
+  phone(v) {
+    const s = v.replace(/[\s\-().]/g, '');
+    if (!s) return 'Zadejte své telefonní číslo.';
+    const ok = /^(\+|00)420[2-9]\d{8}$/.test(s)   // +420 777 123 456
+            || /^[2-9]\d{8}$/.test(s)              // 777123456
+            || /^(\+|00)(?!420)[1-9]\d{7,14}$/.test(s); // zahraniční číslo
+    return ok ? '' : 'Zadejte platné telefonní číslo, např. 777 123 456.';
+  },
+  address(v) {
+    v = v.trim();
+    if (!v) return 'Zadejte adresu nemovitosti.';
+    if (v.length < 5 || !/\p{L}/u.test(v)) return 'Zadejte adresu nemovitosti (obec, ulice, číslo).';
+    return '';
+  }
+};
+
+function setFieldError(el, message) {
+  const wrap = el.closest('.form-field');
+  if (!wrap) return;
+  const box = wrap.querySelector('.field-error');
+  wrap.classList.toggle('has-error', !!message);
+  if (box) box.textContent = message || '';
+}
+
+function validateField(el) {
+  const rule = FIELD_RULES[el.name];
+  const message = rule ? rule(el.value) : '';
+  setFieldError(el, message);
+  return !message;
+}
+
+if (contactForm) {
+  ['name', 'email', 'phone', 'address'].forEach(n => {
+    const el = contactForm.elements[n];
+    if (!el) return;
+    el.addEventListener('blur', () => { if (el.value.trim()) validateField(el); });
+    el.addEventListener('input', () => {
+      if (el.closest('.form-field').classList.contains('has-error')) validateField(el);
+    });
+  });
+  if (packageSelect) {
+    packageSelect.addEventListener('change', () => setFieldError(packageSelect, ''));
   }
 }
 
@@ -233,17 +352,28 @@ if (contactForm) {
   contactForm.addEventListener('submit', e => {
     e.preventDefault();
 
-    // Basic validation
-    const name  = contactForm.name.value.trim();
-    const email = contactForm.email.value.trim();
-    if (!name || !email) {
-      shakeField(!name ? contactForm.name : contactForm.email);
-      return;
+    // Validate everything at once and show every problem
+    const invalid = [];
+    ['name', 'email', 'phone', 'address'].forEach(n => {
+      if (!validateField(contactForm.elements[n])) invalid.push(contactForm.elements[n]);
+    });
+    if (packageSelect) {
+      if (!packageSelect.value) {
+        setFieldError(packageSelect, 'Vyberte balíček (když si nejste jistí, zvolte „Nejsem si jistý/á“).');
+        invalid.push(packageSelect);
+      } else {
+        setFieldError(packageSelect, '');
+      }
     }
     if (bookingInput && !bookingInput.value) {
-      bookingSummary.textContent = 'Prosím vyberte den a čas natáčení.';
+      bookingSummary.textContent = 'Vyberte prosím den a čas natáčení.';
       bookingSummary.classList.add('is-error');
-      document.querySelector('.booking-calendar').scrollIntoView({ behavior: 'smooth', block: 'center' });
+      invalid.push(document.querySelector('.booking-calendar'));
+    }
+    if (invalid.length) {
+      invalid.sort((a, b) => a.getBoundingClientRect().top - b.getBoundingClientRect().top);
+      invalid[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+      if (invalid[0].focus && invalid[0].tagName !== 'DIV') invalid[0].focus({ preventScroll: true });
       return;
     }
 
@@ -266,13 +396,7 @@ if (contactForm) {
         submitBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Odesláno! Brzy se ozveme.';
         submitBtn.style.background = '#16a34a';
         contactForm.reset();
-        if (bookingDaysEl) {
-          bookingDaysEl.querySelectorAll('.booking-day').forEach(b => b.classList.remove('is-selected'));
-          bookingTimesEl.innerHTML = '';
-          bookingTimesEl.hidden = true;
-          bookingSummary.textContent = 'Nejprve vyberte den.';
-          bookingSummary.classList.remove('is-set', 'is-error');
-        }
+        if (calGrid) resetBooking();
 
         setTimeout(() => {
           submitBtn.innerHTML = idleHTML;
