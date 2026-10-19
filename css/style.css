@@ -80,6 +80,7 @@ button { cursor: pointer; }
   font-family: var(--serif);
   font-style: italic;
   font-weight: 700;
+  color: var(--accent-2);
 }
 
 .section-subtitle {
@@ -706,7 +707,7 @@ button { cursor: pointer; }
   box-shadow: var(--shadow-md);
   scroll-snap-align: start;
 }
-#resultsTrackWide .result-card { aspect-ratio: 16/9; }
+#resultsTrackWide .result-card { flex: 0 0 calc((100% - 16px) / 2); aspect-ratio: 16/9; }
 
 .result-card--raised { transform: translateY(-36px); }
 
@@ -1381,7 +1382,7 @@ button { cursor: pointer; }
   font-size: 24px;
   font-weight: 700;
   letter-spacing: -0.01em;
-  color: var(--dark);
+  color: var(--accent-2);
   margin-bottom: 10px;
 }
 
@@ -1521,7 +1522,7 @@ button { cursor: pointer; }
   font-size: 22px;
   font-weight: 700;
   letter-spacing: -0.01em;
-  color: var(--dark);
+  color: var(--accent-2);
 }
 .video-subheading::before {
   content: '';
