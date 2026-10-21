@@ -1229,12 +1229,17 @@ button { cursor: pointer; }
 .cal-day {
   aspect-ratio: 1 / 0.56;
   min-height: 46px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 12px;
   border: 1.5px solid rgba(85, 139, 255, 0.16);
   background: #fff;
   font-family: var(--font);
   font-size: 15px;
   font-weight: 600;
+  white-space: nowrap;
   color: var(--dark);
   cursor: pointer;
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.04);
