@@ -1211,7 +1211,7 @@ button { cursor: pointer; }
 .cal-weekdays,
 .cal-grid {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(7, minmax(0, 1fr));
   gap: 6px;
 }
 .cal-weekdays { margin-bottom: 6px; }
@@ -1812,12 +1812,13 @@ button { cursor: pointer; }
    ═══════════════════════════════════════════════════════ */
 @media (max-width: 1024px) {
   .plan-row {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 20px;
     padding: 28px 24px;
   }
-  .plan-row-cta { flex-direction: row; align-items: center; justify-content: space-between; width: 100%; }
+  .plan-row-cta { flex-direction: row; flex-wrap: wrap; align-items: center; justify-content: space-between; width: 100%; }
   .plan-row-features { columns: 1; }
+  .plan-row-features li:nth-child(2) { break-after: auto; -webkit-column-break-after: auto; }
   .stats-grid    { grid-template-columns: repeat(2, 1fr); }
   .footer-grid   { grid-template-columns: 1fr 1fr; gap: 36px; }
   .result-card   { flex-basis: calc((100% - 32px) / 3); }

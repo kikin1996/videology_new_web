@@ -338,11 +338,6 @@ if (contactForm) {
         setFieldError(packageSelect, '');
       }
     }
-    if (bookingInput && !bookingInput.value) {
-      bookingSummary.textContent = 'Vyberte prosím den a čas natáčení.';
-      bookingSummary.classList.add('is-error');
-      invalid.push(document.querySelector('.booking-calendar'));
-    }
     if (invalid.length) {
       invalid.sort((a, b) => a.getBoundingClientRect().top - b.getBoundingClientRect().top);
       invalid[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
