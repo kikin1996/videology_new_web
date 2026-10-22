@@ -582,6 +582,7 @@ if (resultsPrev && resultsNext && (resultsTracks.reels || resultsTracks.wide || 
       });
       activeTrack = nextTrack;
       activeTrack.scrollLeft = 0;
+      activeTrack.querySelectorAll('.fade-up').forEach(el => el.classList.add('visible'));
       updateArrows();
       if (resultsMoreLink && resultsMoreHrefs[key]) resultsMoreLink.href = resultsMoreHrefs[key];
     });
