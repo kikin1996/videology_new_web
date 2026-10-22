@@ -741,6 +741,8 @@ button { cursor: pointer; }
 .results-arrow--prev { left: -24px; }
 .results-arrow--next { right: -24px; }
 
+.results-more { text-align: center; margin-top: 40px; }
+
 .card-handle {
   position: absolute;
   bottom: 18px;
