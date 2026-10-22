@@ -537,11 +537,14 @@ const resultsPrev = document.getElementById('resultsPrev');
 const resultsNext = document.getElementById('resultsNext');
 const resultsTracks = {
   reels: document.getElementById('resultsTrackReels'),
-  wide: document.getElementById('resultsTrackWide')
+  wide: document.getElementById('resultsTrackWide'),
+  photos: document.getElementById('resultsTrackPhotos')
 };
+const resultsMoreLink = document.getElementById('resultsMoreLink');
+const resultsMoreHrefs = { reels: 'videoprohlidka.html', wide: 'videoprohlidka.html', photos: 'fotogalerie.html' };
 
-if (resultsPrev && resultsNext && (resultsTracks.reels || resultsTracks.wide)) {
-  let activeTrack = resultsTracks.reels || resultsTracks.wide;
+if (resultsPrev && resultsNext && (resultsTracks.reels || resultsTracks.wide || resultsTracks.photos)) {
+  let activeTrack = resultsTracks.reels || resultsTracks.wide || resultsTracks.photos;
 
   const scrollByCard = dir => {
     const card = activeTrack.querySelector('.result-card');
@@ -580,6 +583,7 @@ if (resultsPrev && resultsNext && (resultsTracks.reels || resultsTracks.wide)) {
       activeTrack = nextTrack;
       activeTrack.scrollLeft = 0;
       updateArrows();
+      if (resultsMoreLink && resultsMoreHrefs[key]) resultsMoreLink.href = resultsMoreHrefs[key];
     });
   });
 }

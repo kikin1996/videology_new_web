@@ -152,6 +152,7 @@
       <div class="results-toggle fade-up">
         <button type="button" class="results-toggle-btn active" data-track="reels">Reels</button>
         <button type="button" class="results-toggle-btn" data-track="wide">Videoprohlídky</button>
+        <button type="button" class="results-toggle-btn" data-track="photos">Fotografie</button>
       </div>
 
       <div class="results-carousel">
@@ -245,6 +246,33 @@
           </div>
         </div>
 
+        <div class="results-track" id="resultsTrackPhotos" data-track="photos" hidden>
+          <div class="result-card fade-up" style="--delay:0.1s">
+            <img src="img/gallery/obyvaci-pokoj-velky.jpg" alt="Obývací pokoj" loading="lazy">
+            <div class="card-handle">Obývací pokoj</div>
+          </div>
+          <div class="result-card result-card--raised fade-up" style="--delay:0.2s">
+            <img src="img/gallery/kuchyne-moderni.jpg" alt="Kuchyně" loading="lazy">
+            <div class="card-handle">Kuchyně</div>
+          </div>
+          <div class="result-card fade-up" style="--delay:0.3s">
+            <img src="img/gallery/koupelna-vana.jpg" alt="Koupelna" loading="lazy">
+            <div class="card-handle">Koupelna</div>
+          </div>
+          <div class="result-card result-card--raised fade-up" style="--delay:0.1s">
+            <img src="img/gallery/letecky-pohled-dum.jpg" alt="Letecký pohled na dům" loading="lazy">
+            <div class="card-handle">Rodinný dům</div>
+          </div>
+          <div class="result-card fade-up" style="--delay:0.2s">
+            <img src="img/gallery/loznice-podkrovi.jpg" alt="Ložnice" loading="lazy">
+            <div class="card-handle">Ložnice</div>
+          </div>
+          <div class="result-card result-card--raised fade-up" style="--delay:0.3s">
+            <img src="img/gallery/bytovy-dum-exterier.jpg" alt="Exteriér bytového domu" loading="lazy">
+            <div class="card-handle">Byt</div>
+          </div>
+        </div>
+
         <button type="button" class="results-arrow results-arrow--prev" id="resultsPrev" aria-label="Předchozí ukázky">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
         </button>
@@ -254,7 +282,7 @@
       </div>
 
       <div class="results-more fade-up">
-        <a href="videoprohlidka.html" class="btn btn-outline">
+        <a href="videoprohlidka.html" class="btn btn-outline" id="resultsMoreLink">
           Zobrazit více
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="8 7 17 7 17 16"/></svg>
         </a>
