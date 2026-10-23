@@ -501,6 +501,37 @@ if (videoLightbox && videoLightboxPlayer) {
 }
 
 
+// ── Photo gallery click-to-enlarge lightbox ───────────
+const imageLightbox = document.getElementById('imageLightbox');
+const imageLightboxPic = document.getElementById('imageLightboxPic');
+const imageLightboxClose = document.getElementById('imageLightboxClose');
+
+if (imageLightbox && imageLightboxPic) {
+  const closeImageLightbox = () => {
+    imageLightbox.classList.remove('open');
+    imageLightboxPic.src = '';
+    document.body.style.overflow = '';
+  };
+
+  document.querySelectorAll('.gallery-item img').forEach(img => {
+    img.addEventListener('click', () => {
+      imageLightboxPic.src = img.src;
+      imageLightboxPic.alt = img.alt;
+      imageLightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  imageLightboxClose.addEventListener('click', closeImageLightbox);
+  imageLightbox.addEventListener('click', e => {
+    if (e.target === imageLightbox) closeImageLightbox();
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeImageLightbox();
+  });
+}
+
+
 // ── Video grid pagination (Videoprohlídka page) ───────
 function initVideoPagination(trackId, prevId, nextId, countId, paginationId) {
   const track = document.getElementById(trackId);
