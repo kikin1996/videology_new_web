@@ -709,6 +709,8 @@ button { cursor: pointer; }
   scroll-snap-align: start;
 }
 #resultsTrackWide .result-card { flex: 0 0 calc((100% - 16px) / 2); aspect-ratio: 16/9; }
+.result-card--matterport { flex: 0 0 100%; aspect-ratio: 16/9; }
+.result-card--matterport iframe { width: 100%; height: 100%; border: none; }
 
 .result-card--raised { transform: translateY(-36px); }
 

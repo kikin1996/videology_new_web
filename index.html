@@ -153,6 +153,7 @@
         <button type="button" class="results-toggle-btn active" data-track="reels">Reels</button>
         <button type="button" class="results-toggle-btn" data-track="wide">Videoprohlídky</button>
         <button type="button" class="results-toggle-btn" data-track="photos">Fotografie</button>
+        <button type="button" class="results-toggle-btn" data-track="matterport">Matterport</button>
       </div>
 
       <div class="results-carousel">
@@ -270,6 +271,17 @@
           <div class="result-card result-card--raised fade-up" style="--delay:0.3s">
             <img src="img/gallery/bytovy-dum-exterier.jpg" alt="Exteriér bytového domu" loading="lazy">
             <div class="card-handle">Byt</div>
+          </div>
+        </div>
+
+        <div class="results-track" id="resultsTrackMatterport" data-track="matterport" hidden>
+          <div class="result-card result-card--matterport fade-up" style="--delay:0.1s">
+            <iframe
+              src="https://my.matterport.com/show/?m=kLYSdwm4t7Y"
+              title="Videology.cz – Matterport 3D prohlídka"
+              allow="xr-spatial-tracking; gyroscope; accelerometer; fullscreen"
+              allowfullscreen
+              loading="lazy"></iframe>
           </div>
         </div>
 
