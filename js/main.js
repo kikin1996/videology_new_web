@@ -615,6 +615,10 @@ if (resultsPrev && resultsNext && (resultsTracks.reels || resultsTracks.wide || 
       activeTrack = nextTrack;
       activeTrack.scrollLeft = 0;
       activeTrack.querySelectorAll('.fade-up').forEach(el => el.classList.add('visible'));
+      activeTrack.querySelectorAll('iframe[data-src]').forEach(frame => {
+        frame.src = frame.dataset.src;
+        frame.removeAttribute('data-src');
+      });
       updateArrows();
       if (resultsMoreLink && resultsMoreHrefs[key]) resultsMoreLink.href = resultsMoreHrefs[key];
     });
